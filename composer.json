@@ -1,5 +1,5 @@
 {
-    "name": "3f/toolbag",
+    "name": "3f/tool-bag",
     "description": "A bunch of idempotent static functions organised into categories to be reused in multiple projects.",
     "keywords": ["helper", "tool bag", "tool", "function", "util"],
     "homepage": "https://github.com/dedalozzo/tool-bag",
