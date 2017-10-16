@@ -11,6 +11,9 @@
 namespace ToolBag\Helper;
 
 
+use ToolBag\Exception\JSONErrorException;
+
+
 /**
  * @brief Helper with common array methods.
  * @nosubgrouping
