@@ -9,7 +9,7 @@
 
 
 //! Collections
-namespace ToolBag\Collection;
+namespace ToolBag\Meta\Collection;
 
 
 /**
