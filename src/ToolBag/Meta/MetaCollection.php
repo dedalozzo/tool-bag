@@ -8,8 +8,10 @@
  */
 
 
-//! Collections
-namespace ToolBag\Meta\Collection;
+namespace ToolBag\Meta;
+
+
+use ToolBag\Extension\TProperty;
 
 
 /**
@@ -18,6 +20,7 @@ namespace ToolBag\Meta\Collection;
  * @nosubgrouping
  */
 abstract class MetaCollection implements \IteratorAggregate, \Countable, \ArrayAccess {
+  use TProperty;
 
   /**
    * @var array $meta
