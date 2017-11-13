@@ -8,6 +8,7 @@
  */
 
 
+//! Extensions and traits
 namespace ToolBag\Extension;
 
 
