@@ -12,7 +12,7 @@ namespace ToolBag\Helper;
 
 
 /**
- * @brief This class extends the Elephant on Couch TimeHelper, adding new methods.
+ * @brief This class contains routines to handle time.
  * @nosubgrouping
  */
 class TimeHelper {
@@ -132,7 +132,7 @@ class TimeHelper {
       elseif ($time['minutes'] > 1)
         return sprintf('%d minutes ago', $time['minutes']);
       elseif ($time['minutes'] == 1)
-        return "one minute fa";
+        return "one minute ago";
       elseif ($time['seconds'] > 1)
         return sprintf('%d seconds ago', $time['seconds']);
       else // $time['seconds'] == 1
