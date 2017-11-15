@@ -8,7 +8,7 @@
 
 ToolBag
 ========
-An object oriented access control system.
+A bunch of idempotent static functions organised into categories to be reused in multiple projects.
 
 
 Composer Installation
