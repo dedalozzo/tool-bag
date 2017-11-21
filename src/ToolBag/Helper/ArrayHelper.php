@@ -138,4 +138,34 @@ class ArrayHelper {
     return array_keys(array_flip($array));
   }
 
+
+  /**
+   * @brief Like `array_unique`, removes duplicate values, but works on multidimensional arrays.
+   * @details The returned array doesn't contain duplicate values for the specified key.
+   * @param[in] array $array The original array.
+   * @param[in] array $key The key that will be used as filter.
+   * @retval array
+   */
+  public static function multidimensionalUnique(array $array, $key) {
+    $i = 0;
+
+    // The resulting array.
+    $uniqueArray = [];
+
+    // An array with the used keys.
+    $keys = [];
+
+    foreach($array as $value) {
+
+      if (!in_array($value[$key], $keys)) {
+        $keys[$i] = $value[$key];
+        $uniqueArray[$i] = $value;
+      }
+
+      $i++;
+    }
+
+    return $uniqueArray;
+  }
+
 } 
