@@ -118,7 +118,7 @@ class TextHelper {
   /**
    * @brief Generates a single word, stripping every `-` from a compound word.
    * @param string $word A compound word.
-   * @return array
+   * @return string
    * @warning This function works with UTF-8 strings.
    */
   public static function stick($word) {
@@ -213,7 +213,7 @@ class TextHelper {
 
   /**
    * @brief Formats the number replacing the thousand separator with the decimal point.
-   * @param string $number The input number.
+   * @param double $number The input number.
    * @return string
    */
   public static function formatNumber($number) {
