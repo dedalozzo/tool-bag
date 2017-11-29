@@ -23,8 +23,8 @@ class ArrayHelper {
 
   /**
    * @brief Checks if the array is associative.
-   * @param[in] array $array The array.
-   * @retval bool
+   * @param array $array The array.
+   * @return bool
    */
   public static function isAssociative(array $array) {
     return (0 !== count(array_diff_key($array, array_keys(array_keys($array)))) || count($array) == 0);
@@ -33,8 +33,8 @@ class ArrayHelper {
 
   /**
    * @brief Converts the array to an object.
-   * @param[in] array $array The array to be converted.
-   * @retval object
+   * @param array $array The array to be converted.
+   * @return object
    */
   public static function toObject(array $array) {
     return is_array($array) ? (object)array_map(__METHOD__, $array) : $array;
@@ -43,9 +43,9 @@ class ArrayHelper {
 
   /**
    * @brief Converts the given JSON into an array.
-   * @param[in] string $json A JSON object.
-   * @param[in] bool $assoc When `true`, returned objects will be converted into associative arrays.
-   * @retval array
+   * @param string $json A JSON object.
+   * @param bool $assoc When `true`, returned objects will be converted into associative arrays.
+   * @return array
    */
   public static function fromJson($json, $assoc) {
     $data = json_decode((string)$json, $assoc);
@@ -75,9 +75,9 @@ class ArrayHelper {
 
   /**
    * @brief Returns a portion of the array.
-   * @param[in] array $array The original array.
-   * @param[in] int $number (optional) The number of elements from left to right.
-   * @retval array
+   * @param array $array The original array.
+   * @param int $number (optional) The number of elements from left to right.
+   * @return array
    */
   public static function slice(array $array, $number = NULL) {
     return array_slice($array, 0, $number, TRUE);
@@ -86,9 +86,9 @@ class ArrayHelper {
 
   /**
    * @brief Given a key, returns its related value.
-   * @param[in] mixed $key A key.
-   * @param[in] array $array The array to be searched.
-   * @retval int,bool The value or `false` in case the value doesn't exist.
+   * @param mixed $key A key.
+   * @param array $array The array to be searched.
+   * @return mixed The value or `false` in case the value doesn't exist.
    */
   public static function value($key, array $array) {
 
@@ -101,9 +101,9 @@ class ArrayHelper {
 
   /**
    * @brief Given a key, returns it only if exists otherwise return `false`.
-   * @param[in] mixed $key A key.
-   * @param[in] array $array The array to be searched.
-   * @retval mixed,bool The key or `false` in case the key doesn't exist.
+   * @param mixed $key A key.
+   * @param array $array The array to be searched.
+   * @return mixed The key or `false` in case the key doesn't exist.
    */
   public static function key($key, array $array) {
 
@@ -129,9 +129,9 @@ class ArrayHelper {
   /**
    * @brief Merge the two given arrays.
    * @details The returned array doesn't contain duplicate values.
-   * @param[in] array $array1 The first array.
-   * @param[in] array $array2 The first array.
-   * @retval array
+   * @param array $array1 The first array.
+   * @param array $array2 The first array.
+   * @return array
    */
   public static function merge(array $array1, array $array2) {
     $array = array_merge($array1, $array2);
@@ -142,9 +142,9 @@ class ArrayHelper {
   /**
    * @brief Like `array_unique`, removes duplicate values, but works on multidimensional arrays.
    * @details The returned array doesn't contain duplicate values for the specified key.
-   * @param[in] array $array The original array.
-   * @param[in] array $key The key that will be used as filter.
-   * @retval array
+   * @param array $array The original array.
+   * @param array $key The key that will be used as filter.
+   * @return array
    */
   public static function multidimensionalUnique(array $array, $key) {
     $i = 0;

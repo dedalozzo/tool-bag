@@ -50,9 +50,9 @@ class TimeHelper {
   /**
    * @brief Returns an associative array with the elapsed time, from the provided timestamp, in days, hours, minutes and
    * seconds.
-   * @param[in] string $timestamp A timestamp in seconds/microseconds.
-   * @param[in] string $micro When `true` the timestamp is expressed in microseconds otherwise in seconds.
-   * @retval array An associative array
+   * @param string $timestamp A timestamp in seconds/microseconds.
+   * @param string $micro When `true` the timestamp is expressed in microseconds otherwise in seconds.
+   * @return array An associative array
    */
   public static function since($timestamp, $micro = FALSE) {
     $microsecondsInASecond = 1000000;
@@ -102,8 +102,8 @@ class TimeHelper {
 
   /**
    * @brief Checks if the provided string represents a period of time and returns it if exists otherwise returns `false`.
-   * @param[in] string $str A human readable period of time.
-   * @retval int|bool If the period of time exists returns it, else returns `false`. In case `$str` is `null`, returns
+   * @param string $str A human readable period of time.
+   * @return int|bool If the period of time exists returns it, else returns `false`. In case `$str` is `null`, returns
    * `all_time`.
    */
   public static function period($str) {
@@ -114,9 +114,9 @@ class TimeHelper {
   /**
    * @brief Returns a measure of the time passed since the provided timestamp. In case is passed more than a day,
    * returns a human readable date.
-   * @param[in] int $timestamp A timestamp in seconds.
-   * @param[in] bool $showTime When `true` returns also the time passed in case of an event occurred in the past.
-   * @retval string
+   * @param int $timestamp A timestamp in seconds.
+   * @param bool $showTime When `true` returns also the time passed in case of an event occurred in the past.
+   * @return string
    */
   public static function when($timestamp, $showTime = TRUE) {
     $today = date('Ymd');
@@ -149,10 +149,10 @@ class TimeHelper {
 
   /**
    * @brief Given a constant representing a period, returns a formatted string.
-   * @param[in] int $periodInTime A period in time.
-   * @param[in] string $prefix A string prefix.
-   * @param[in] string $postfix A string postfix.
-   * @retval string
+   * @param int $periodInTime A period in time.
+   * @param string $prefix A string prefix.
+   * @param string $postfix A string postfix.
+   * @return string
    */
   public static function aWhileBack($periodInTime, $prefix = "", $postfix = "") {
     $date = new \DateTime();
@@ -196,7 +196,7 @@ class TimeHelper {
 
   /**
    * @brief Given a constant representing a period, returns a range of timestamps (minimum and maximum) for that period.
-   * @param[in] int $periodInTime A period in time.
+   * @param int $periodInTime A period in time.
    * @param[out] \DateTime $minTimestamp The minimum date in the period.
    * @param[out] \DateTime $maxTimestamp The maximum date in the period.
    */
@@ -245,9 +245,9 @@ class TimeHelper {
    * @brief Given a period of time (an year, a month or a day), calculates the date limits for that period.
    * @param[out] \DateTime $minDate The minimum date in the period.
    * @param[out] \DateTime $maxDate The maximum date in the period.
-   * @param[in] string $year An year.
-   * @param[in] string $month (optional) A month.
-   * @param[in] string $day (optional) A day.
+   * @param string $year An year.
+   * @param string $month (optional) A month.
+   * @param string $day (optional) A day.
    */
   public static function dateLimits(&$minDate, &$maxDate, $year, $month = NULL, $day = NULL) {
     $aDay = (is_null($day)) ? 1 : (int)$day;

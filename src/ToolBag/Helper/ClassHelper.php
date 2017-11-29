@@ -20,8 +20,8 @@ class ClassHelper {
 
   /**
    * @brief Given a class path, returns the class name even included its namespace.
-   * @param[in] string $pathname The entire class path included its filename and extension.
-   * @retval string The class name.
+   * @param string $pathname The entire class path included its filename and extension.
+   * @return string The class name.
    */
   public static function getClass($pathname) {
     return preg_replace('/\.php\z/i', '', "\\".str_replace('/', "\\", substr($pathname, stripos($pathname, "ToolBag"))));
@@ -30,8 +30,8 @@ class ClassHelper {
 
   /**
    * @brief Given a class within its namespace, it returns the class name pruned by its namespace.
-   * @param[in] string $class The class included its namespace.
-   * @retval string The class name.
+   * @param string $class The class included its namespace.
+   * @return string The class name.
    */
   public static function getClassName($class) {
     return substr(strrchr($class, '\\'), 1);
@@ -40,8 +40,8 @@ class ClassHelper {
 
   /**
    * @brief Given a namespace, it returns the namespace itself pruned by its last part.
-   * @param[in] string $namespace A namespace.
-   * @retval string The namespace's root.
+   * @param string $namespace A namespace.
+   * @return string The namespace's root.
    */
   public static function getClassRoot($namespace) {
     if (preg_match('/^(.*[\\\\])/', $namespace, $matches))

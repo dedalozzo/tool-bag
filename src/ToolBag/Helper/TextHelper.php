@@ -30,11 +30,11 @@ class TextHelper {
    * encoding of the Latin alphabet, used by default in the legacy components of Microsoft Windows in English and some
    * other Western languages. This character encoding is a superset of `ISO-8859-1`, but it differs from it by using
    * displayable characters rather than control characters in the 80 to 9F (hex) range.
-   * @param[in] string $text The input string.
-   * @param[in] bool $stripslashes (optional) If `true` strip all the slashes before converting the text.
-   * @param[in] string $fromCharset (optional) The origin charset.
-   * @param[in] string $toCharset (optional) The target charset.
-   * @retval string
+   * @param string $text The input string.
+   * @param bool $stripslashes (optional) If `true` strip all the slashes before converting the text.
+   * @param string $fromCharset (optional) The origin charset.
+   * @param string $toCharset (optional) The target charset.
+   * @return string
    * @attention Doesn't matter if the varchar fields of your MySQL tables are encoded in `LATIN1`, in fact, if someone
    * ever posted a document from Windows Word containing smart characters, like curly quotes or smart apostrophes, the
    * real charset used is `Windows-1252`.
@@ -54,13 +54,13 @@ class TextHelper {
 
   /**
    * @brief Cuts a string to a given number of characters without breaking words.
-   * @param[in] string $text The input string.
-   * @param[in] integer $length The number of characters at which the string will be wrapped, ex. 200 characters.
-   * @param[in] string $etc The characters you want append to the end of text.
-   * @param[in] string $charset (optional) The charset used.
-   * @param[in] bool $breakWords (optional) If `true` breaks the words to return the exact number of chars.
-   * @param[in] bool $middle (optional) Truncates the text but remove middle instead the end of the string.
-   * @retval string
+   * @param string $text The input string.
+   * @param integer $length The number of characters at which the string will be wrapped, ex. 200 characters.
+   * @param string $etc The characters you want append to the end of text.
+   * @param string $charset (optional) The charset used.
+   * @param bool $breakWords (optional) If `true` breaks the words to return the exact number of chars.
+   * @param bool $middle (optional) Truncates the text but remove middle instead the end of the string.
+   * @return string
    * @warning This function works with UTF-8 strings.
    */
   public static function truncate($text, $length = 200, $etc = ' ...', $charset='UTF-8', $breakWords = FALSE, $middle = FALSE) {
@@ -85,9 +85,9 @@ class TextHelper {
 
   /**
    * @brief Capitalizes the given string.
-   * @param[in] string $text The input string.
-   * @param[in] string $charset (optional) The charset used.
-   * @retval string
+   * @param string $text The input string.
+   * @param string $charset (optional) The charset used.
+   * @return string
    * @warning This function works with UTF-8 strings.
    */
   public static function capitalize($text, $charset = 'UTF-8') {
@@ -97,8 +97,8 @@ class TextHelper {
 
   /**
    * @brief Removes the content of pre tags, than strip all tags.
-   * @param[in] string $text The input string.
-   * @retval string
+   * @param string $text The input string.
+   * @return string
    * @warning This function works with UTF-8 strings.
    */
   public static function purge($text) {
@@ -117,8 +117,8 @@ class TextHelper {
 
   /**
    * @brief Generates a single word, stripping every `-` from a compound word.
-   * @param[in] string $word A compound word.
-   * @retval array
+   * @param string $word A compound word.
+   * @return array
    * @warning This function works with UTF-8 strings.
    */
   public static function stick($word) {
@@ -128,9 +128,9 @@ class TextHelper {
 
   /**
    * @brief Given a string, returns all the unique contained substrings.
-   * @param[in] string $str The input string.
-   * @param[in] string $charset (optional) The charset used.
-   * @retval array
+   * @param string $str The input string.
+   * @param string $charset (optional) The charset used.
+   * @return array
    * @warning This function works with UTF-8 strings.
    */
   public static function substrings($str, $charset = 'UTF-8') {
@@ -147,8 +147,8 @@ class TextHelper {
 
   /**
    * @brief Generates a slug from the provided string.
-   * @param[in] string $str The input string.
-   * @retval string
+   * @param string $str The input string.
+   * @return string
    * @warning This function receives as input an UTF-8 string and returns an ASCII string.
    * @see https://en.wikipedia.org/wiki/Slug_(publishing)
    */
@@ -172,9 +172,9 @@ class TextHelper {
 
   /**
    * @brief Builds the post url, given its publishing or creation date and its slug.
-   * @param[in] int $date Publishing or creation date.
-   * @param[in] string $slug The slug of the title.
-   * @retval string The complete url of the post.
+   * @param int $date Publishing or creation date.
+   * @param string $slug The slug of the title.
+   * @return string The complete url of the post.
    */
   public static function buildUrl($date, $slug) {
     return date('/Y/m/d/', $date).$slug;
@@ -183,10 +183,10 @@ class TextHelper {
 
   /**
    * @brief Replaces all the occurrences but first.
-   * @param[in] string $pattern The pattern to search for.
-   * @param[in] string $replacement The string used as replacement for the match found.
-   * @param[in] string $subject The string to search and replace.
-   * @retval string
+   * @param string $pattern The pattern to search for.
+   * @param string $replacement The string used as replacement for the match found.
+   * @param string $subject The string to search and replace.
+   * @return string
    */
   public static function replaceAllButFirst($pattern, $replacement, $subject) {
     return preg_replace_callback(
@@ -203,8 +203,8 @@ class TextHelper {
 
   /**
    * @brief Prunes the ID of its version number, if any.
-   * @param[in] string $id An UUID followed by a timestamp, like `3e96144b-3ebd-41e4-8a45-78cd9af1671d::1410886811`.
-   * @retval string Returns just `3e96144b-3ebd-41e4-8a45-78cd9af1671d`.
+   * @param string $id An UUID followed by a timestamp, like `3e96144b-3ebd-41e4-8a45-78cd9af1671d::1410886811`.
+   * @return string Returns just `3e96144b-3ebd-41e4-8a45-78cd9af1671d`.
    */
   public static function unversion($id) {
     return strtok($id, self::SEPARATOR);
@@ -213,8 +213,8 @@ class TextHelper {
 
   /**
    * @brief Formats the number replacing the thousand separator with the decimal point.
-   * @param[in] string $number The input number.
-   * @retval string
+   * @param string $number The input number.
+   * @return string
    */
   public static function formatNumber($number) {
     return number_format($number, 0, ",", ".");
@@ -223,8 +223,8 @@ class TextHelper {
 
   /**
    * @brief Separates the given full name into first name and last name.
-   * @param[in] string $fullName A person full name.
-   * @retval array An associative array.
+   * @param string $fullName A person full name.
+   * @return array An associative array.
    */
   public static function splitFullName($fullName) {
     $result = [];
@@ -264,8 +264,8 @@ class TextHelper {
 
   /**
    * @brief Removes unwanted MS Word smart characters from a string.
-   * @param[in] string $text The text to be sanitized.
-   * @retval string The sanitized text.
+   * @param string $text The text to be sanitized.
+   * @return string The sanitized text.
    * @warning This function doesn't work with UTF-8 strings.
    */
   public static function sanitize($text) {

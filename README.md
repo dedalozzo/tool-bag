@@ -2,8 +2,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/3f/tool-bag/v/unstable.png)](https://packagist.org/packages/3f/tool-bag)
 [![Build Status](https://scrutinizer-ci.com/g/dedalozzo/tool-bag/badges/build.png?b=master)](https://scrutinizer-ci.com/g/dedalozzo/tool-bag/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dedalozzo/tool-bag/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dedalozzo/tool-bag/?branch=master)
-[![License](https://poser.pugx.org/3f/tool-bag/license.svg)](https://packagist.org/packages/3f/converter)
-[![Total Downloads](https://poser.pugx.org/3f/tool-bag/downloads.png)](https://packagist.org/packages/3f/converter)
+[![License](https://poser.pugx.org/3f/tool-bag/license.svg)](https://packagist.org/packages/3f/tool-bag)
+[![Total Downloads](https://poser.pugx.org/3f/tool-bag/downloads.png)](https://packagist.org/packages/3f/tool-bag)
 
 
 ToolBag
