@@ -140,7 +140,7 @@ class ArrayHelper {
 
 
   /**
-   * @brief Like `array_unique`, removes duplicate values, but works on multidimensional arrays.
+   * @brief Like `array_unique()`, removes duplicate values, but works on multidimensional arrays.
    * @details The returned array doesn't contain duplicate values for the specified key.
    * @param array $array The original array.
    * @param array $key The key that will be used as filter.
