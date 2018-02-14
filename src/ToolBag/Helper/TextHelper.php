@@ -12,9 +12,6 @@
 namespace ToolBag\Helper;
 
 
-use Converter;
-
-
 /**
  * @brief This helper class contains routines to process text.
  * @nosubgrouping
