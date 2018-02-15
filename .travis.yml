@@ -15,7 +15,7 @@ addons:
   apt:
     packages:
       - parallel
-      
+
 php:
   - 5.6
 
@@ -32,8 +32,6 @@ install:
     - flags="--ansi --prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"
     # install dependencies using system provided composer binary
     - composer install $flags
-    # install dependencies using composer from source
-    - bin/composer install $flags
 
 before_script:
     # make sure git tests do not complain about user/email not being set
