@@ -52,12 +52,12 @@ class ArrayHelperTest extends PHPUnit_Framework_TestCase {
       'three' => 3,
     ];
 
-    assertTrue(ArrayHelper::isAssociative($assocArray));
+    $this->assertTrue(ArrayHelper::isAssociative($assocArray));
   }
 
 
   public function testIsNotAssociative() {
-    assertFalse(ArrayHelper::isAssociative([1, 2, 3]));
+    $this->assertFalse(ArrayHelper::isAssociative([1, 2, 3]));
   }
 
 }
